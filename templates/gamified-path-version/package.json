@@ -1,7 +1,7 @@
 {
-  "name": "ui-templates",
+  "name": "gamified-path-version",
   "version": "1.0.0",
-  "description": "A collection of polished UI template experiments and concept apps.",
+  "description": "A minimal placeholder-only learning app UI with a gamified path and light progression mechanics.",
   "private": true,
   "scripts": {
     "dev": "next dev",

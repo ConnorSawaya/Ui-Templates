@@ -39,17 +39,23 @@ Use simple placeholders such as:
 
 ## How To Run
 
-This template currently uses the repo root implementation for safety.
+1. `cd templates/gamified-path-version`
+2. `npm install`
+3. `npm run dev`
+4. Open `http://localhost:3000`
 
-1. `npm install`
-2. `npm run dev`
-3. Open `http://localhost:3000`
+Build locally:
 
-Implementation currently lives in:
+1. `cd templates/gamified-path-version`
+2. `npm run build`
+3. `npm run start`
+
+Implementation lives here:
 
 - `src/`
 - `public/`
 - `src/features/luma-learn/`
+- `supabase/`
 
 ## Included Screens
 
@@ -65,4 +71,4 @@ Implementation currently lives in:
 - keep the template minimal
 - keep labels placeholder-only
 - avoid copying real learning apps directly
-- if the repo grows, this template can be moved into its own standalone app folder later
+- keep the root repo clean and treat this folder as the standalone template app

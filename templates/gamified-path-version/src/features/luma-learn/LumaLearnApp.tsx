@@ -607,6 +607,7 @@ function ProfileScreen({
 }) {
   const theme = useStore((s) => s.theme);
   const toggleTheme = useStore((s) => s.toggleTheme);
+  const [showSettings, setShowSettings] = useState(false);
   const profileStats = [
     { label: "XP", value: `${xp}` },
     { label: "Gems", value: `${gems}` },
@@ -639,10 +640,47 @@ function ProfileScreen({
           </div>
 
           <div className="rounded-[24px] border border-[var(--luma-border)] bg-[var(--luma-surface)] p-4 shadow-[0_8px_24px_rgba(20,34,22,0.04)]">
-            <p className="px-1 pb-3 text-xs font-medium uppercase tracking-[0.16em] text-[var(--luma-subtle)]">
-              Settings
-            </p>
-            <ThemeSettingRow theme={theme} onToggle={toggleTheme} />
+            <button
+              type="button"
+              onClick={() => setShowSettings((current) => !current)}
+              className="flex w-full items-center justify-between rounded-[20px] px-1 py-1 text-left"
+              aria-expanded={showSettings}
+              aria-controls="profile-settings-panel"
+            >
+              <div className="flex items-center gap-3">
+                <div className="flex h-9 w-9 items-center justify-center rounded-full bg-[var(--luma-surface-softest)] text-[var(--luma-muted)]">
+                  <Settings2 className="h-4 w-4" />
+                </div>
+                <div>
+                  <p className="text-sm font-medium text-[var(--luma-text)]">Settings</p>
+                  <p className="mt-1 text-xs text-[var(--luma-muted)]">App appearance</p>
+                </div>
+              </div>
+
+              <ChevronRight
+                className={cn(
+                  "h-4 w-4 text-[var(--luma-subtle)] transition-transform",
+                  showSettings ? "rotate-90" : "rotate-0"
+                )}
+              />
+            </button>
+
+            <AnimatePresence initial={false}>
+              {showSettings ? (
+                <motion.div
+                  id="profile-settings-panel"
+                  initial={{ opacity: 0, height: 0, y: -4 }}
+                  animate={{ opacity: 1, height: "auto", y: 0 }}
+                  exit={{ opacity: 0, height: 0, y: -4 }}
+                  transition={transitions}
+                  className="overflow-hidden"
+                >
+                  <div className="pt-3">
+                    <ThemeSettingRow theme={theme} onToggle={toggleTheme} />
+                  </div>
+                </motion.div>
+              ) : null}
+            </AnimatePresence>
           </div>
         </div>
       </div>

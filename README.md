@@ -19,24 +19,24 @@ A minimal placeholder-only learning app UI with a gamified progression path, lig
 
 ## Run The Current Template
 
-The current working template implementation stays at the repo root for now to avoid breaking the app while the repository grows into a multi-template collection.
-
-1. `npm install`
-2. `npm run dev`
-3. Open `http://localhost:3000`
+1. `cd templates/gamified-path-version`
+2. `npm install`
+3. `npm run dev`
+4. Open `http://localhost:3000`
 
 Build locally:
 
-1. `npm run build`
-2. `npm run start`
+1. `cd templates/gamified-path-version`
+2. `npm run build`
+3. `npm run start`
 
 ## Folder Structure
 
 ```text
 ui-templates/
   README.md
-  package.json
   .gitignore
+  LICENSE
   docs/
     ADDING_NEW_TEMPLATES.md
     TEMPLATE_GUIDE.md
@@ -45,15 +45,20 @@ ui-templates/
       README.md
   templates/
     gamified-path-version/
+      package.json
+      package-lock.json
       README.md
       template.json
       notes.md
+      public/
+      src/
+      supabase/
+      next.config.ts
+      tsconfig.json
       references/
         README.md
       screenshots/
         README.md
-  public/
-  src/
 ```
 
 ## Screenshots
@@ -89,3 +94,4 @@ Keep future templates:
 - The current template is intentionally placeholder-only.
 - Do not copy real brand systems, mascots, exact icons, or exact layouts.
 - Keep concepts lightweight, responsive, and easy to preview.
+- The repo root is now intentionally light so each template can live in its own folder.
