@@ -1,0 +1,9 @@
+{
+  "name": "gamified-path-version",
+  "displayName": "Gamified Path Version",
+  "category": "learning-app",
+  "style": ["minimal", "mobile-first", "placeholder-only", "gamified-path"],
+  "description": "A minimal learning app UI with a Duolingo-inspired progression path, original styling, and placeholder-only content.",
+  "status": "active",
+  "version": "1.0.0"
+}
