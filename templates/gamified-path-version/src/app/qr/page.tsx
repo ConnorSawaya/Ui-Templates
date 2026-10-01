@@ -33,7 +33,8 @@ export default function QRPage() {
 
       if (!response.ok) throw new Error("Fetch failed");
 
-      const text = await response.text();
+      const data: { text?: unknown } = await response.json();
+      const text = typeof data.text === "string" ? data.text : "";
       if (text.trim()) {
         const result = await analyzeMenuText(text);
         setAnalysis(result);
